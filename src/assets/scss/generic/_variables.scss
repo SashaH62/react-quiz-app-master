@@ -1,0 +1,27 @@
+@use "sass:map";
+
+/******************
+      COLORS
+******************/
+
+$purple: #A729F5;
+$dark_grey: #313E51;
+$med_grey: #3B4D66;
+$light_grey: #626C7F;
+$light_blue: #ABC1E1;
+$grey: #F4F6FA;
+$white: #fff;
+$green: #26D782;
+$red: #EE5454;
+
+$light: (
+    background-color: $grey,
+    font-color: $dark_grey,
+    answer-card-color: $white,
+);
+
+.App.light {
+    --background-color: #{map.get($light, background-color)};
+    --font-color: #{map.get($light, font-color)};
+    --answer-card-color: #{map.get($light, answer-card-color)};
+}
