@@ -4,24 +4,42 @@
       COLORS
 ******************/
 
-$purple: #A729F5;
-$dark_grey: #313E51;
-$med_grey: #3B4D66;
-$light_grey: #626C7F;
-$light_blue: #ABC1E1;
-$grey: #F4F6FA;
+$purple: #a729f5;
+$dark_grey: #313e51;
+$med_grey: #3b4d66;
+$light_grey: #626c7f;
+$light_blue: #abc1e1;
+$grey: #f4f6fa;
 $white: #fff;
-$green: #26D782;
-$red: #EE5454;
+$green: #26d782;
+$red: #ee5454;
+
+$border-r-std: 24px;
 
 $light: (
-    background-color: $grey,
-    font-color: $dark_grey,
-    answer-card-color: $white,
+  background-color: $grey,
+  font-color: $dark_grey,
+  generic-card-color: $white,
+  box-shadow: 0px 16px 40px rgba(143, 160, 193, 0.14),
+);
+
+$dark: (
+  background-color: $dark_grey,
+  font-color: $white,
+  generic-card-color: $med_grey,
+  box-shadow: 0px 16px 40px rgba(49, 62, 81, 0.14),
 );
 
 .App.light {
-    --background-color: #{map.get($light, background-color)};
-    --font-color: #{map.get($light, font-color)};
-    --answer-card-color: #{map.get($light, answer-card-color)};
+  --background-color: #{map.get($light, background-color)};
+  --font-color: #{map.get($light, font-color)};
+  --generic-card-color: #{map.get($light, generic-card-color)};
+  --box-shadow: #{map.get($light, box-shadow)};
+}
+
+.App.dark {
+  --background-color: #{map.get($dark, background-color)};
+  --font-color: #{map.get($dark, font-color)};
+  --generic-card-color: #{map.get($dark, generic-card-color)};
+  --box-shadow: #{map.get($dark, box-shadow)};
 }

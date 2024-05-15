@@ -1,0 +1,13 @@
+@import "../generic/variables";
+
+.container.complete {
+  .results-container {
+    padding: 3rem;
+    background-color: var(--generic-card-color);
+    border-radius: $border-r-std;
+
+    p {
+      font-size: 24px;
+    }
+  }
+}

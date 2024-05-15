@@ -1,0 +1,27 @@
+@import "../generic/variables";
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  outline: none;
+  border: none;
+  color: $white;
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-family: "Rubrik", sans-serif;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+
+  &.btn-ui {
+    background: $purple;
+    box-shadow: var(--box-shadow);
+    border-radius: $border-r-std;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

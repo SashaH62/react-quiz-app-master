@@ -1,0 +1,89 @@
+@import "../generic/variables";
+
+.generic-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--generic-card-color);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  border-radius: $border-r-std;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  gap: 2rem;
+  flex-grow: 1;
+  text-align: left;
+
+  .card-icon--container {
+    flex-basis: 56px;
+    flex-shrink: 0;
+    height: 56px;
+    background: #f4f6fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in-out;
+
+    h5 {
+      transition: all 0.1s ease-in-out;
+    }
+  }
+
+  &:hover {
+    .card-icon--container {
+      background-color: #f6e7ff;
+      h5 {
+        color: $purple;
+      }
+    }
+  }
+
+  &.correct,
+  &.incorrect {
+    &::after {
+      margin-left: auto;
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &.correct {
+    &::after {
+      content: url("../../../../public/assets/images/icon-correct.svg");
+    }
+  }
+
+  &.selected {
+    border-color: $purple;
+
+    .card-icon--container {
+      background-color: $purple;
+      h5 {
+        color: $white;
+      }
+    }
+
+    &.correct {
+      border-color: $green;
+
+      .card-icon--container {
+        background-color: $green;
+      }
+    }
+
+    &.incorrect {
+      border-color: $red;
+
+      &::after {
+        content: url("../../../../public/assets/images/icon-incorrect.svg");
+      }
+
+      .card-icon--container {
+        background-color: $red;
+      }
+    }
+  }
+}
