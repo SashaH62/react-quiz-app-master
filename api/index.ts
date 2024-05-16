@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Serve a JSON file
 app.get("/data/data.json", (req, res) => {
-  const filePath = path.join(__dirname, "../data/data.json");
+  const filePath = path.join(__dirname, "data/data.json");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       res.status(500).send("Error reading the file");
