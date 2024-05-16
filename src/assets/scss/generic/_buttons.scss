@@ -14,11 +14,17 @@
   cursor: pointer;
   transition: all 0.1s ease-in-out;
   width: 100%;
+  border-radius: $border-r-std;
+
+  @media (max-width: $mobile) {
+    padding: 18px 12px;
+    font-size: 18px;
+    border-radius: $border-r-m;
+  }
 
   &.btn-ui {
     background: $purple;
     box-shadow: var(--box-shadow);
-    border-radius: $border-r-std;
 
     &:hover {
       opacity: 0.5;

@@ -1,21 +1,17 @@
 @import "../generic/variables";
 
 header.container {
-  .header-category {
-    .card-icon--container {
-      flex-basis: 56px;
-      flex-shrink: 0;
-      height: 56px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: $white;
-    }
+  @media (max-width: $tablet) {
+    flex-direction: row;
   }
 
   .color-toggle-container {
     margin-left: auto;
+
+    img {
+      max-width: 20px;
+    }
+
     .checkbox {
       opacity: 0;
       position: absolute;
@@ -32,21 +28,35 @@ header.container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (max-width: $mobile) {
+        width: 32px;
+        height: 20px;
+      }
     }
 
     .checkbox-label .ball {
       background-color: #fff;
-      width: 20px;
-      height: 20px;
+      width: 19px;
+      height: 19px;
       position: absolute;
       left: 4px;
       top: 4px;
       border-radius: 50%;
       transition: transform 0.2s linear;
+
+      @media (max-width: $mobile) {
+        width: 12px;
+        height: 12px;
+      }
     }
 
     .checkbox:checked + .checkbox-label .ball {
-      transform: translateX(20px);
+      transform: translateX(21px);
+
+      @media (max-width: $mobile) {
+        transform: translateX(12px);
+      }
     }
   }
 }

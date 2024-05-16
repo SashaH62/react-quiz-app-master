@@ -2,8 +2,29 @@
 
 .container {
   &.quiz {
+    .question-col {
+      @media (min-width: $desktop) {
+        max-width: 452px;
+      }
+
+      h4 {
+        @media (min-width: $mobile) and (max-width: $tablet) {
+          margin-bottom: 2rem !important;
+        }
+      }
+    }
+
     progress {
       margin-top: auto;
+      margin-bottom: 7rem;
+
+      @media (max-width: $tablet) {
+        margin-bottom: 4rem;
+      }
+
+      @media (max-width: $mobile) {
+        margin-bottom: 2.5rem;
+      }
 
       &[value] {
         width: 100%;
@@ -15,8 +36,12 @@
 
     progress[value]::-webkit-progress-bar {
       border-radius: 10em;
-      background: $white;
+      background: var(--progress-bar-background);
       padding: 3px;
+
+      @media (max-width: $mobile) {
+        padding: 5px;
+      }
     }
 
     progress[value]::-webkit-progress-value {

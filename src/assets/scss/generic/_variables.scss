@@ -15,31 +15,74 @@ $green: #26d782;
 $red: #ee5454;
 
 $border-r-std: 24px;
+$border-r-m: 12px;
+
+/******************
+   RESPONSIVE
+******************/
+
+$mobile: 468px;
+$tablet: 992px;
+$desktop: 1024px;
+
+/******************
+    COLOR SCHEME
+******************/
 
 $light: (
+  background-image:
+    url("../../../../public/assets/images/pattern-background-desktop-light.svg"),
   background-color: $grey,
   font-color: $dark_grey,
   generic-card-color: $white,
   box-shadow: 0px 16px 40px rgba(143, 160, 193, 0.14),
+  progress-bar-background: $white,
 );
 
 $dark: (
+  background-image:
+    url("../../../../public/assets/images/pattern-background-desktop-dark.svg"),
   background-color: $dark_grey,
   font-color: $white,
   generic-card-color: $med_grey,
   box-shadow: 0px 16px 40px rgba(49, 62, 81, 0.14),
+  progress-bar-background: $med_grey,
 );
 
 .App.light {
   --background-color: #{map.get($light, background-color)};
+  --background-image: #{map.get($light, background-image)};
   --font-color: #{map.get($light, font-color)};
   --generic-card-color: #{map.get($light, generic-card-color)};
   --box-shadow: #{map.get($light, box-shadow)};
+  --progress-bar-background: #{map.get($light, progress-bar-background)};
 }
 
 .App.dark {
   --background-color: #{map.get($dark, background-color)};
+  --background-image: #{map.get($dark, background-image)};
   --font-color: #{map.get($dark, font-color)};
   --generic-card-color: #{map.get($dark, generic-card-color)};
   --box-shadow: #{map.get($dark, box-shadow)};
+  --progress-bar-background: #{map.get($dark, progress-bar-background)};
+}
+
+@media (max-width: $mobile) {
+  $light: (
+    background-image:
+      url("../../../../public/assets/images/pattern-background-mobile-light.svg"),
+  );
+
+  .App.light {
+    --background-image: #{map.get($light, background-image)};
+  }
+
+  $dark: (
+    background-image:
+      url("../../../../public/assets/images/pattern-background-mobile-dark.svg"),
+  );
+
+  .App.dark {
+    --background-image: #{map.get($dark, background-image)};
+  }
 }

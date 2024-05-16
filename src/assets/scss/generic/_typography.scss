@@ -1,3 +1,5 @@
+@import "../generic/variables";
+
 h1,
 h2,
 h3,
@@ -6,6 +8,10 @@ h5,
 h6,
 p {
   font-family: "Rubrik", sans-serif;
+}
+
+strong {
+  font-weight: 500;
 }
 
 h1 {
@@ -37,4 +43,19 @@ p {
   font-size: 0.75rem;
   line-height: 1.5;
   font-weight: 400;
+}
+
+@media (max-width: $mobile) {
+  h2,
+  h3 {
+    font-size: 40px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
 }

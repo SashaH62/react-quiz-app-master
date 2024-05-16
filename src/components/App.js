@@ -60,6 +60,7 @@ function reducer(state, action) {
         questionIndex: 0,
         submittedAnswer: false,
         correctAnswerIndex: null,
+        selectedAnswer: null,
       };
     default:
       throw new Error("Action not recognized");
@@ -122,6 +123,8 @@ function App() {
           <ResultsScreen
             points={points}
             numQuestions={numQuestions}
+            catIndex={catIndex}
+            questions={questions}
             dispatch={dispatch}
           />
         )}

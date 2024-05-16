@@ -45,26 +45,67 @@ body,
   justify-content: center;
   flex-direction: column;
   color: var(--font-color);
+  background-image: var(--background-image);
   background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: $tablet) {
+    justify-content: flex-start;
+  }
 }
 
 .container {
   display: flex;
   max-width: 1157px;
   width: 100%;
+  justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1.5rem;
+  }
 
   .col-6 {
-    flex-basis: 50%;
-    flex-grow: 1;
+    @media (min-width: $desktop) {
+      flex-basis: 50%;
+      max-width: 50%;
+      flex-grow: 1;
+    }
 
     &.card-col {
       display: flex;
       flex-flow: column;
       row-gap: 24px;
+
+      @media (max-width: $mobile) {
+        row-gap: 12px;
+      }
     }
   }
 
   &.main {
-    padding: 5rem 0;
+    padding-top: 5rem;
+
+    @media (max-width: $tablet) {
+      padding-top: 2rem;
+    }
+
+    @media (max-width: $mobile) {
+      padding-top: 2rem;
+    }
+  }
+
+  &.start,
+  &.quiz,
+  &.complete {
+    @media (max-width: $tablet) {
+      padding: unset;
+    }
   }
 }

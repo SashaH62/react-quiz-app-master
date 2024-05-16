@@ -1,0 +1,22 @@
+@import "../generic/variables";
+
+.category-title-card {
+  .card-icon--container {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+
+    @media (max-width: $mobile) {
+      height: 40px;
+      width: 40px;
+
+      img {
+        max-width: 28px;
+      }
+    }
+  }
+}
