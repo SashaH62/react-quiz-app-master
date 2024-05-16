@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
+import axios from "axios";
 import Error from "./Error";
 import Loading from "./Loading";
 import StartScreen from "./StartScreen";
@@ -82,10 +83,20 @@ function App() {
   ] = useReducer(reducer, initState);
 
   useEffect(() => {
-    fetch("http://localhost:8080/quizzes")
-      .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", payload: data }))
-      .catch((err) => dispatch({ type: "dataFailed" }));
+    // fetch("http://localhost:8080/quizzes")
+    //   .then((res) => res.json())
+    //   .then((data) => dispatch({ type: "dataReceived", payload: data }))
+    //   .catch((err) => dispatch({ type: "dataFailed" }));
+
+    axios
+      .get("http://localhost:5000/data/data.json")
+      .then((response) => {
+        console.log(response);
+        dispatch({ type: "dataReceived", payload: response.data.quizzes });
+      })
+      .catch((error) => {
+        dispatch({ type: "dataFailed" });
+      });
   }, []);
 
   const [colorScheme, setColorScheme] = useState("light");
