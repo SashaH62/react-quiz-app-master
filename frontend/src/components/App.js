@@ -89,8 +89,9 @@ function App() {
     //   .catch((err) => dispatch({ type: "dataFailed" }));
 
     axios
-      .get("/api/data/data.json")
+      .get("http://localhost:5000/data/data.json")
       .then((response) => {
+        console.log(response);
         dispatch({ type: "dataReceived", payload: response.data.quizzes });
       })
       .catch((error) => {
