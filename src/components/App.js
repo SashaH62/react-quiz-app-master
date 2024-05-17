@@ -89,7 +89,7 @@ function App() {
     //   .catch((err) => dispatch({ type: "dataFailed" }));
 
     axios
-      .get("http://localhost:5000/data/data.json")
+      .get("https://react-quiz-app-express-api.vercel.app")
       .then((response) => {
         console.log(response);
         dispatch({ type: "dataReceived", payload: response.data.quizzes });
